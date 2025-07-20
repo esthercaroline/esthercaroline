@@ -54,13 +54,13 @@
   <summary>Click to expand →</summary>
   <br/>
   <div align="center">
-    <a href="https://github.com/esther‑caroline/glutezy">
+    <a href="https://github.com/esthercaroline/glutezy">
       <img src="https://github-readme-stats.vercel.app/api/pin/?username=esthercaroline&repo=glutezy&theme=github_dark" alt="Glutezy" width="162px"/>
     </a>
-    <a href="https://github.com/esther‑caroline/ecos‑de‑ravencroft">
+    <a href="https://github.com/esthercaroline/ecos‑de‑ravencroft">
       <img src="https://github-readme-stats.vercel.app/api/pin/?username=esthercaroline&repo=ecos‑de‑ravencroft&theme=github_dark" alt="Ecos de Ravencroft" width="162px"/>
     </a>
-    <a href="https://github.com/esther‑caroline/megadados-api">
+    <a href="https://github.com/esthercaroline/megadados-api">
       <img src="https://github-readme-stats.vercel.app/api/pin/?username=esthercaroline&repo=megadados-api&theme=github_dark" alt="Megadados API" width="162px"/>
     </a>
   </div>
