@@ -6,7 +6,6 @@ permissions:
 
 on:
   schedule:
-    # every 12 hours
     - cron: "0 */12 * * *"
   workflow_dispatch:
   push:
@@ -21,6 +20,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: Prepare dist folder
+        run: mkdir -p dist
 
       - name: Generate light snake SVG
         uses: Platane/snk@v3
