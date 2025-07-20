@@ -57,19 +57,3 @@
     alt="Contribution Snake Light"
   />
 </p>
-
-<!-- dark SVG -->
-<p align="center">
-  <img
-    src="https://raw.githubusercontent.com/esthercaroline/esthercaroline/main/dist/github-contribution-grid-snake-dark.svg"
-    alt="Contribution Snake Dark"
-  />
-</p>
-
-<!-- GIF -->
-<p align="center">
-  <img
-    src="https://raw.githubusercontent.com/esthercaroline/esthercaroline/main/dist/github-contribution-grid-snake.gif"
-    alt="Contribution Snake GIF"
-  />
-</p>
