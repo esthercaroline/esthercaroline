@@ -21,8 +21,17 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Debug: show workspace BEFORE dist
+        run: |
+          echo ">>> PWD: $(pwd)"
+          echo ">>> ROOT files:"
+          ls -la
+
       - name: Prepare dist folder
-        run: mkdir -p dist
+        run: |
+          mkdir -p dist
+          echo ">>> After mkdir -p dist:"
+          ls -la
 
       - name: Generate light snake SVG
         uses: Platane/snk@v3
@@ -50,6 +59,13 @@ jobs:
           color_dots: '#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Debug: show workspace AFTER generation
+        run: |
+          echo ">>> ROOT files:"
+          ls -la
+          echo ">>> dist/ contents:"
+          ls -la dist
 
       - name: Commit & push snake files
         uses: stefanzweifel/git-auto-commit-action@v4
