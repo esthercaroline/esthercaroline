@@ -53,7 +53,7 @@
 <!-- light SVG -->
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/YOUR-USER/YOUR-REPO/output/dist/github-contribution-grid-snake.svg"
+    src="https://raw.githubusercontent.com/esthercaroline/esthercaroline/output/dist/github-contribution-grid-snake.svg"
     alt="Contribution Snake Light"
   />
 </p>
@@ -61,7 +61,7 @@
 <!-- dark SVG -->
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/YOUR-USER/YOUR-REPO/output/dist/github-contribution-grid-snake-dark.svg"
+    src="https://raw.githubusercontent.com/esthercaroline/esthercaroline/output/dist/github-contribution-grid-snake-dark.svg"
     alt="Contribution Snake Dark"
   />
 </p>
@@ -69,7 +69,7 @@
 <!-- GIF -->
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/YOUR-USER/YOUR-REPO/output/dist/github-contribution-grid-snake.gif"
+    src="https://raw.githubusercontent.com/esthercaroline/esthercaroline/output/dist/github-contribution-grid-snake.gif"
     alt="Contribution Snake GIF"
   />
 </p>
