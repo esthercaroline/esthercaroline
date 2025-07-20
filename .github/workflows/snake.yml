@@ -1,24 +1,60 @@
-name: GitHub Contribution Snake
+# .github/workflows/snake.yml
+name: Generate Snake
 
 on:
   schedule:
-    - cron: '0 0 * * *'       
-  workflow_dispatch:        
+    # every 12 hours
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # 1) checkout your code
       - uses: actions/checkout@v3
-
-      - name: Generate Contribution Grid Snake
-        uses: trekhleb/github-contribution-grid-snake@v2
         with:
-          fileName: output/contribution-grid-snake.svg
+          fetch-depth: 0   # so we can push back
 
-      - name: Commit & Push SVG
+      # 2) light‑mode SVG
+      - name: Generate light snake SVG
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          fileName: dist/github-contribution-grid-snake.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3) dark‑mode SVG
+      - name: Generate dark snake SVG
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          fileName: dist/github-contribution-grid-snake-dark.svg
+          palette: github-dark
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 4) optional: GIF version
+      - name: Generate snake GIF
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          fileName: dist/github-contribution-grid-snake.gif
+          color_snake: orange
+          color_dots: '#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 5) push everything up to your `output` branch
+      - name: Push to output branch
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_user_name: github-actions
-          commit_user_email: github-actions@github.com
-          file_pattern: output/contribution-grid-snake.svg
+          commit_message: "chore: update snake animations"
+          file_pattern: dist/**
+          branch: output
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
