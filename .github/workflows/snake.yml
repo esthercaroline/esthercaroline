@@ -1,0 +1,24 @@
+name: GitHub Contribution Snake
+
+on:
+  schedule:
+    - cron: '0 0 * * *'       
+  workflow_dispatch:        
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate Contribution Grid Snake
+        uses: trekhleb/github-contribution-grid-snake@v2
+        with:
+          fileName: output/contribution-grid-snake.svg
+
+      - name: Commit & Push SVG
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_user_name: github-actions
+          commit_user_email: github-actions@github.com
+          file_pattern: output/contribution-grid-snake.svg
