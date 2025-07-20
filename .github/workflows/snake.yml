@@ -1,13 +1,13 @@
 # .github/workflows/snake.yml
 name: Generate Contribution Snake
 
-# allow the action to push commits
+# Allow the workflow to push commits back to the repo
 permissions:
   contents: write
 
 on:
-  # every 12 hours, manual dispatch, or on push to main
   schedule:
+    # every 12 hours
     - cron: "0 */12 * * *"
   workflow_dispatch:
   push:
@@ -18,50 +18,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 1) fetch the repo so we can write back
+      # 1) Check out the repo
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      # 2) ensure the dist folder exists
+      # 2) Ensure dist/ exists
       - name: Prepare dist folder
-        run: |
-          mkdir -p dist
-          echo ">>> After mkdir -p dist:"
-          ls -la
+        run: mkdir -p dist
 
-      # 3) generate the light snake SVG
-      - name: Generate light-mode snake SVG
+      # 3) Generate all snake outputs at once
+      - name: Generate snake assets
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
-          fileName: dist/github-contribution-grid-snake.svg
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 4) generate the dark-mode snake SVG
-      - name: Generate dark-mode snake SVG
-        uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          fileName: dist/github-contribution-grid-snake-dark.svg
-          palette: github-dark
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # 5) (optional) generate the animated GIF
-      - name: Generate snake GIF
-        uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          fileName: dist/github-contribution-grid-snake.gif
-          color_snake: orange
-          color_dots: '#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # 6) commit & push the new files back to main
+      # 4) Commit & push the generated files back to main
       - name: Commit and push snake assets
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
