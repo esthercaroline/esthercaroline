@@ -1,7 +1,10 @@
 <!-- 👋 Typing intro -->
 <h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Poppins&size=40&center=true&duration=3000&pause=100&color=3EFEFF&width=500&height=70&lines=Hi+There!;I'm+Esther+Caroline;Welcome+to+my+GitHub!" alt="Typing SVG" />
+  <img 
+    src="https://readme-typing-svg.demolab.com?font=Poppins&size=40&center=true&duration=3000&pause=100&color=AAAAAA&width=500&height=70&lines=Hi+There!;I'm+Esther+Caroline;Welcome+to+my+GitHub!" 
+    alt="Typing SVG" />
 </h1>
+
 
 <!-- 📍 One‑line bio -->
 <h3 align="center">6th‑sem CS student at Insper | Data Science & ML enthusiast 🚀</h3>
@@ -52,13 +55,13 @@
   <br/>
   <div align="center">
     <a href="https://github.com/esther‑caroline/glutezy">
-      <img src="https://github-readme-stats.vercel.app/api/pin/?username=esther‑caroline&repo=glutezy&theme=github_dark" alt="Glutezy" width="162px"/>
+      <img src="https://github-readme-stats.vercel.app/api/pin/?username=esthercaroline&repo=glutezy&theme=github_dark" alt="Glutezy" width="162px"/>
     </a>
     <a href="https://github.com/esther‑caroline/ecos‑de‑ravencroft">
-      <img src="https://github-readme-stats.vercel.app/api/pin/?username=esther‑caroline&repo=ecos‑de‑ravencroft&theme=github_dark" alt="Ecos de Ravencroft" width="162px"/>
+      <img src="https://github-readme-stats.vercel.app/api/pin/?username=esthercaroline&repo=ecos‑de‑ravencroft&theme=github_dark" alt="Ecos de Ravencroft" width="162px"/>
     </a>
     <a href="https://github.com/esther‑caroline/megadados-api">
-      <img src="https://github-readme-stats.vercel.app/api/pin/?username=esther‑caroline&repo=megadados-api&theme=github_dark" alt="Megadados API" width="162px"/>
+      <img src="https://github-readme-stats.vercel.app/api/pin/?username=esthercaroline&repo=megadados-api&theme=github_dark" alt="Megadados API" width="162px"/>
     </a>
   </div>
 </details>
