@@ -26,7 +26,10 @@ jobs:
 
       # 2) ensure the dist folder exists
       - name: Prepare dist folder
-        run: mkdir -p dist
+        run: |
+          mkdir -p dist
+          echo ">>> After mkdir -p dist:"
+          ls -la
 
       # 3) generate the light snake SVG
       - name: Generate light-mode snake SVG
