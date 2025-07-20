@@ -1,6 +1,9 @@
 # .github/workflows/snake.yml
 name: Generate Snake
 
+permissions:
+  contents: write
+
 on:
   schedule:
     # every 12 hours
@@ -14,12 +17,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 1) checkout your code
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0   # so we can push back
+          fetch-depth: 0
 
-      # 2) light‑mode SVG
       - name: Generate light snake SVG
         uses: Platane/snk@v3
         with:
@@ -28,7 +30,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 3) dark‑mode SVG
       - name: Generate dark snake SVG
         uses: Platane/snk@v3
         with:
@@ -38,7 +39,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 4) optional: GIF version
       - name: Generate snake GIF
         uses: Platane/snk@v3
         with:
@@ -49,12 +49,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # 5) push everything up to your `output` branch
-      - name: Push to output branch
+      - name: Commit & push snake files
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "chore: update snake animations"
-          file_pattern: dist/**
+          file_pattern: "dist/**"
           branch: main
+          commit_user_name: github-actions
+          commit_user_email: github-actions@github.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
