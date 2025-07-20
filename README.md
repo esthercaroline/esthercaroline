@@ -7,7 +7,7 @@
 
 
 <!-- 📍 One‑line bio -->
-<h3 align="center">6th‑sem CS student at Insper | Data Science & ML enthusiast 🚀</h3>
+<h3 align="center">6th‑sem CS student at Insper | Data Science & ML enthusiast </h3>
 
 ---
 
@@ -33,14 +33,14 @@
 
 ---
 
-### ⚒️ Languages & Tools  
+### Languages & Tools  
 <div align="center">
   <img src="https://skillicons.dev/icons?i=python,java,javascript,html,css,fastapi,react,mongodb,postgresql,docker,kubernetes,C" />
 </div>
 
 ---
 
-### 📊 GitHub Stats & Streak  
+### GitHub Stats & Streak  
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=esthercaroline&show_icons=true&theme=github_dark&count_private=true" alt="GitHub Stats" />
   &nbsp;&nbsp;
