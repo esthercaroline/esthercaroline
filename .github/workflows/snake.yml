@@ -55,6 +55,6 @@ jobs:
         with:
           commit_message: "chore: update snake animations"
           file_pattern: dist/**
-          branch: output
+          branch: main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
